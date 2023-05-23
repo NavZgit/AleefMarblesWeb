@@ -1,8 +1,34 @@
 import logo from '../logo.svg';
 import './App.css';
 import React, {Component} from 'react';
+import HttpService from '../services/http-service';
+
+const http = new HttpService();
 
 class App extends Component{
+    
+    constructor(props){
+        super(props);
+        
+        //bind functions
+        this.loadApiData = this.loadApiData.bind(this);
+        this.loadApiData();
+    }
+    
+    //this will handle api request and take care of promises.
+    loadApiData = () => {
+        http.getProducts().then(
+            productData => {
+                //when promise brings data
+                console.log(productData);
+            },
+            err => {
+                //when promise brings error data
+                console.log("error bringing data");
+            }
+        );
+    }
+    
  render(){
   return (
     <div className="App container">
