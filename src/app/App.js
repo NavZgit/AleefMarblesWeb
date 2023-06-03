@@ -34,10 +34,9 @@ class App extends Component{
     <div className="App container">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <p class="lead">
+          Welcome to ALM
         </p>
-          <p>hello world</p>
         <a
           className="App-link"
           href="https://reactjs.org"
